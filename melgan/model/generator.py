@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from utils.utils import weights_init
-from model.res_stack import ResStack
+from melgan.utils.utils import weights_init
+from melgan.model.res_stack import ResStack
 # from res_stack import ResStack
 
 MAX_WAV_VALUE = 32768.0

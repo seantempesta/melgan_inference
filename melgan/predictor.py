@@ -1,8 +1,8 @@
 import torch
-from model.generator import Generator
-from utils.hparams import HParam, load_hparam_str
-from utils.pqmf import PQMF
-from denoiser import Denoiser
+from melgan.model.generator import Generator
+from melgan.utils.hparams import HParam, load_hparam_str
+from melgan.utils.pqmf import PQMF
+from melgan.denoiser import Denoiser
 
 MAX_WAV_VALUE = 32768.0
 
