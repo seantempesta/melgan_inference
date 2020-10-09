@@ -12,7 +12,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pypa/sampleproject",
-    packages=['melgan'],
+    packages=find_packages(),
     install_requires=[
         'numpy',
         'torch',
