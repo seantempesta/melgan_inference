@@ -1,8 +1,8 @@
 import torch
-from melgan.model.generator import Generator
-from melgan.utils.hparams import HParam, load_hparam_str
-from melgan.utils.pqmf import PQMF
-from melgan.denoiser import Denoiser
+from .model.generator import Generator
+from .utils.hparams import HParam, load_hparam_str
+from .utils.pqmf import PQMF
+from .denoiser import Denoiser
 
 MAX_WAV_VALUE = 32768.0
 
@@ -54,3 +54,4 @@ def repl_test():
     mel = torch.randn(1, 80, 106).to(device)
     denoise = 0.05
     audio = predict(hp, model, mel, denoise=denoise, device=device)
+    return audio
