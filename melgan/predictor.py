@@ -1,14 +1,8 @@
-import os
-import glob
-import tqdm
 import torch
-import argparse
-from scipy.io.wavfile import write
-import numpy as np
-from melgan.model.generator import Generator
-from melgan.utils.hparams import HParam, load_hparam_str
-from melgan.utils.pqmf import PQMF
-from melgan.denoiser import Denoiser
+from model.generator import Generator
+from utils.hparams import HParam, load_hparam_str
+from utils.pqmf import PQMF
+from denoiser import Denoiser
 
 MAX_WAV_VALUE = 32768.0
 
@@ -51,8 +45,8 @@ def predict(hp, model, mel, denoise=None, device="cuda"):
 
 
 def repl_test():
-    config = './melgan/config/mb_melgan.yaml'
-    checkpoint_path = './melgan/mb_melgan_901be72_0600.pt'
+    config = './melgan/config//mb_melgan.yaml'
+    checkpoint_path = '/home/sean/Downloads/mb_melgan_901be72_0600.pt'
     device = "cpu"
 
     hp, model = init(config, checkpoint_path, device=device)
