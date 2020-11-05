@@ -4,12 +4,12 @@ import tqdm
 import torch
 import itertools
 import traceback
-from utils.pqmf import PQMF
-from model.generator import Generator
-from model.multiscale import MultiScaleDiscriminator
-from .utils import get_commit_hash
-from .validation import validate
-from utils.stft_loss import MultiResolutionSTFTLoss
+from melgan.utils.pqmf import PQMF
+from melgan.model.generator import Generator
+from melgan.model.multiscale import MultiScaleDiscriminator
+from melgan.utils.utils import get_commit_hash
+from melgan.utils.validation import validate
+from melgan.utils.stft_loss import MultiResolutionSTFTLoss
 
 
 def train(args, pt_dir, chkpt_path, trainloader, valloader, writer, logger, hp, hp_str):
@@ -96,7 +96,6 @@ def train(args, pt_dir, chkpt_path, trainloader, valloader, writer, logger, hp, 
                 if hp.model.out_channels > 1:
                     y_mb_ = fake_audio
                     fake_audio = pqmf.synthesis(y_mb_)
-
 
                 sc_loss, mag_loss = stft_loss(fake_audio[:, :, :audioG.size(2)].squeeze(1), audioG.squeeze(1))
                 loss_g = sc_loss + mag_loss

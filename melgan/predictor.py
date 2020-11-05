@@ -6,6 +6,7 @@ from .denoiser import Denoiser
 
 MAX_WAV_VALUE = 32768.0
 
+
 def init(config, checkpoint_path, device="cuda"):
     checkpoint = torch.load(checkpoint_path, map_location=device)
     if config is not None:

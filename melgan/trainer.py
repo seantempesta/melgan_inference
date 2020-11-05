@@ -3,10 +3,10 @@ import time
 import logging
 import argparse
 
-from utils.train import train
-from utils.hparams import HParam
-from utils.writer import MyWriter
-from datasets.dataloader import create_dataloader
+from melgan.utils.train import train
+from melgan.utils.hparams import HParam
+from melgan.utils.writer import MyWriter
+from melgan.datasets.dataloader import create_dataloader
 
 
 if __name__ == '__main__':

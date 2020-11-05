@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
-from utils.utils import weights_init
-from .discriminator import Discriminator
+from melgan.utils.utils import weights_init
+from melgan.model.discriminator import Discriminator
 
 
 
